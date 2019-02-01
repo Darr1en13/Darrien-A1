@@ -10,27 +10,8 @@ function startHandler()
 
 function requestHandler(req, res) 
 {
-    var url = require('url');
-    var url_parts = url.parse(req.url, true);
-    var query = url_parts.query;
-    
+    console.log("Handling a request")
     res.writeHead(200, {'Content-Type': 'text/html'});
-    
-    if (query['cmd'] == 'add')
-    {
-      console.log("Handling a request");
-      console.log(query);
-      var sum = 0;
-      for (var i in query['num'])
-      {
-        sum = sum + parseInt(query['num'][i]);
-      }
-      
-      res.write('<p style = "color:red">'+sum+'</p>');
-      res.end('');
-    }
-    else
-    {
-      res.end('');
-    }
+    res.write('<p>Hello!!!</p>');
+    res.end('<p>Have a nice day!!!</p>');
 }
